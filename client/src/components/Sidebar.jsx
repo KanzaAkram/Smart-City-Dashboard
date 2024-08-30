@@ -12,21 +12,99 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
+// import AirOutlinedIcon from '@mui/icons-material/AirOutlined';
+// import {
+//   SettingsOutlined,
+//   ChevronLeft,
+//   ChevronRightOutlined,
+//   HomeOutlined,
+//   LocalParkingOutlined,
+//   CommuteOutlined,
+//   DeleteOutlineOutlined,
+//   WavesOutlined,
+//   OfflineBoltOutlined,
+//   AirOutlined,
+//   CloudOutlined,
+//   WaterDropOutlined,
+//   AdminPanelSettingsOutlined,
+//   Co2Outlined,
+//   TrafficOutlined,
+// } from "@mui/icons-material";
+// import { useEffect, useState } from "react";
+// import { useLocation, useNavigate } from "react-router-dom";
+// import FlexBetween from "./FlexBetween";
+// import profileImage from "@/assets/avatar.svg";
+
+// const navItems = [
+//   {
+//     text: "Dashboard",
+//     icon: <HomeOutlined />,
+//   },
+//   {
+//     text: "Environment Monitoring",
+//     icon: null,
+//   },
+//   {
+//     text: "Air Quality",
+//     icon: <AirOutlined />,
+//   },
+//   {
+//     text: "Weather",
+//     icon: <CloudOutlined />,
+//   },
+//   {
+//     text: "CO2 Emissions",
+//     icon: <Co2Outlined />,
+//   },
+//   {
+//     text: "Traffic and Transportation",
+//     icon: null,
+//   },
+//   {
+//     text: "Traffic Flow",
+//     icon: <TrafficOutlined />,
+//   },
+//   {
+//     text: "Public Transport",
+//     icon: <CommuteOutlined />,
+//   },
+//   {
+//     text: "Parking Availability",
+//     icon: <LocalParkingOutlined />,
+//   },
+//   {
+//     text: "Utilities and Energy",
+//     icon: null,
+//   },
+//   {
+//     text: "Energy Consumption",
+//     icon: <OfflineBoltOutlined />,
+//   },
+//   {
+//     text: "Water Usage",
+//     icon: <WaterDropOutlined />,
+//   },
+//   {
+//     text: "Waste Management",
+//     icon: <DeleteOutlineOutlined />,
+//   },
+// ];
+
 import {
   SettingsOutlined,
   ChevronLeft,
   ChevronRightOutlined,
   HomeOutlined,
-  LocalParkingOutlinedIcon,
-  CommuteOutlinedIcon,
-  DeleteOutlineOutlinedIcon,
-  AirOutlinedIcon,
-  OfflineBoltOutlinedIcon,
-  CloudOutlinedIcon,
-  WaterDropOutlinedIcon,
+  DeleteOutlined,
+  WaterDropOutlined,
+  OfflineBoltOutlined,
+  AirOutlined,
+  LocalParkingOutlined,
+  CloudOutlined,
+  CommuteOutlined,
   AdminPanelSettingsOutlined,
-  Co2OutlinedIcon,
-  TrafficOutlinedIcon,
+  Co2Outlined,
+  TrafficOutlined,
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -44,15 +122,15 @@ const navItems = [
   },
   {
     text: "Air Quality",
-    icon: <AirOutlinedIcon />,
+    icon: <AirOutlined />,
   },
   {
     text: "Weather",
-    icon: <CloudOutlinedIcon />,
+    icon: <CloudOutlined />,
   },
   {
     text: "CO2 Emissions",
-    icon: <Co2OutlinedIcon />,
+    icon: <Co2Outlined />,
   },
   {
     text: "Traffic and Transportation",
@@ -60,33 +138,34 @@ const navItems = [
   },
   {
     text: "Traffic Flow",
-    icon: <TrafficOutlinedIcon />,
+    icon: <TrafficOutlined />,
   },
   {
-    text: "Public Transport",
-    icon: <CommuteOutlinedIcon />,
-  },
-  {
-    text: "Parking Availability",
-    icon: <LocalParkingOutlinedIcon />,
-  },
-  {
-    text: "Utilities and Energy",
-    icon: null,
-  },
-  {
-    text: "Energy Consumption",
-    icon: <OfflineBoltOutlinedIcon />,
-  },
-  {
-    text: "Water Usage",
-    icon: <WaterDropOutlinedIcon />,
-  },
-  {
-    text: "Waste Management",
-    icon: <DeleteOutlineOutlinedIcon />,
-  },
-];
+        text: "Public Transport",
+        icon: <CommuteOutlined />,
+      },
+      {
+        text: "Parking Availability",
+        icon: <LocalParkingOutlined />,
+      },
+      {
+        text: "Utilities and Energy",
+        icon: null,
+      },
+      {
+        text: "Energy Consumption",
+        icon: <OfflineBoltOutlined />,
+      },
+      {
+        text: "Water Usage",
+        icon: <WaterDropOutlined />,
+      },
+      {
+        text: "Waste Management",
+        icon: <DeleteOutlined />,
+      },
+    ];
+    
 
 function Sidebar({
   user,
