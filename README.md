@@ -1,4 +1,4 @@
-# MERN Dashboard Project
+<!-- # MERN Dashboard Project
 
 ![Dashboard Screenshot](client/public/readme_assets/screenshot.png)
 
@@ -220,4 +220,4 @@ Certainly! Here's the documentation section with relevant links:
 
 ---
 
-Feel free to adjust any sections or details according to your preferences!
+Feel free to adjust any sections or details according to your preferences! -->
