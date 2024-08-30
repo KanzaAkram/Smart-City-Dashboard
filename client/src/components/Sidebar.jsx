@@ -17,16 +17,16 @@ import {
   ChevronLeft,
   ChevronRightOutlined,
   HomeOutlined,
-  ShoppingCartOutlined,
-  Groups2Outlined,
-  ReceiptLongOutlined,
-  PublicOutlined,
-  PointOfSaleOutlined,
-  TodayOutlined,
-  CalendarMonthOutlined,
+  LocalParkingOutlinedIcon,
+  CommuteOutlinedIcon,
+  DeleteOutlineOutlinedIcon,
+  AirOutlinedIcon,
+  OfflineBoltOutlinedIcon,
+  CloudOutlinedIcon,
+  WaterDropOutlinedIcon,
   AdminPanelSettingsOutlined,
-  TrendingUpOutlined,
-  PieChartOutlined,
+  Co2OutlinedIcon,
+  TrafficOutlinedIcon,
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -39,56 +39,52 @@ const navItems = [
     icon: <HomeOutlined />,
   },
   {
-    text: "Client Facing",
+    text: "Environment Monitoring",
     icon: null,
   },
   {
-    text: "Products",
-    icon: <ShoppingCartOutlined />,
+    text: "Air Quality",
+    icon: <AirOutlinedIcon />,
   },
   {
-    text: "Customers",
-    icon: <Groups2Outlined />,
+    text: "Weather",
+    icon: <CloudOutlinedIcon />,
   },
   {
-    text: "Transactions",
-    icon: <ReceiptLongOutlined />,
+    text: "CO2 Emissions",
+    icon: <Co2OutlinedIcon />,
   },
   {
-    text: "Geography",
-    icon: <PublicOutlined />,
-  },
-  {
-    text: "Sales",
+    text: "Traffic and Transportation",
     icon: null,
   },
   {
-    text: "Overview",
-    icon: <PointOfSaleOutlined />,
+    text: "Traffic Flow",
+    icon: <TrafficOutlinedIcon />,
   },
   {
-    text: "Daily",
-    icon: <TodayOutlined />,
+    text: "Public Transport",
+    icon: <CommuteOutlinedIcon />,
   },
   {
-    text: "Monthly",
-    icon: <CalendarMonthOutlined />,
+    text: "Parking Availability",
+    icon: <LocalParkingOutlinedIcon />,
   },
   {
-    text: "Breakdown",
-    icon: <PieChartOutlined />,
-  },
-  {
-    text: "Management",
+    text: "Utilities and Energy",
     icon: null,
   },
   {
-    text: "Admin",
-    icon: <AdminPanelSettingsOutlined />,
+    text: "Energy Consumption",
+    icon: <OfflineBoltOutlinedIcon />,
   },
   {
-    text: "Performance",
-    icon: <TrendingUpOutlined />,
+    text: "Water Usage",
+    icon: <WaterDropOutlinedIcon />,
+  },
+  {
+    text: "Waste Management",
+    icon: <DeleteOutlineOutlinedIcon />,
   },
 ];
 
@@ -137,7 +133,7 @@ function Sidebar({
                   width="fit-content"
                 >
                   <Typography variant="h4" fontWeight="bold">
-                    MyDashboard
+                    Smart City Dashboard
                   </Typography>
                   {!isNonMobile && (
                     <IconButton
