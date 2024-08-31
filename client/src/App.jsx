@@ -13,7 +13,7 @@ import {
 import { themeSettings } from "./theme";
 import Layout from "./scenes/Layout";
 import Dashboard from "./scenes/Dashboard";
-import Products from "./scenes/Products";
+import AirQuality from "./scenes/AirQuality";
 import Customers from "./scenes/Customers";
 import Transactions from "./scenes/Transactions";
 import Geography from "./scenes/Geography";
@@ -29,7 +29,7 @@ const router = createBrowserRouter(
     <Route element={<Layout />}>
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
       <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/products" element={<Products />} />
+      <Route path="/airquality" element={<AirQuality />} />
       <Route path="/customers" element={<Customers />} />
       <Route path="/transactions" element={<Transactions />} />
       <Route path="/geography" element={<Geography />} />
