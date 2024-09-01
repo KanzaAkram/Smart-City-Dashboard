@@ -10,7 +10,7 @@ export const getCoordinates = async (city, country) => {
       params: {
         q: `${city},${country}`,
         limit: 1,
-        appid: API_KEY,
+        appid: b4e244a10d98f01695cc093449f743b8,
       },
     });
 
@@ -33,9 +33,9 @@ export const getWeatherData = async (lat, lon) => {
       params: {
         lat,
         lon,
-        exclude: 'minutely,alerts',
-        units: 'metric',
-        appid: API_KEY,
+        exclude: 'minutely,alerts', // Exclude unnecessary data
+        units: 'metric', // Metric units (Celsius)
+        appid: b4e244a10d98f01695cc093449f743b8,
       },
     });
 
