@@ -147,6 +147,7 @@ import managementRoutes from "./routes/managementRoutes.js";
 import salesRoutes from "./routes/salesRoutes.js";
 import airQualityRoutes from './routes/airQualityRoutes.js'; 
  // Import air quality routes
+import weatherRoutes from './routes/weatherRoutes.js';
 
 dotenv.config();
 
@@ -168,6 +169,7 @@ app.use("/management", managementRoutes);
 app.use("/sales", salesRoutes);
 // app.use("/airquality", airQualityRoutes); // Use air quality routes directly
 app.use('/api/airquality', airQualityRoutes);
+app.use('/api/weather', weatherRoutes);
 
 // MONGOOSE SETUP
 const PORT = process.env.PORT || 9000;

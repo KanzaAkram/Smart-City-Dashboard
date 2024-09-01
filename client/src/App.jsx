@@ -23,6 +23,7 @@ import Monthly from "./scenes/Monthly";
 import Breakdown from "./scenes/Breakdown";
 import Admin from "./scenes/Admin";
 import Performance from "./scenes/Performance";
+import Weather from "./scenes/Weather"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,6 +31,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/airquality" element={<AirQuality />} />
+      <Route path="/weather" element={<Weather />} />
       <Route path="/customers" element={<Customers />} />
       <Route path="/transactions" element={<Transactions />} />
       <Route path="/geography" element={<Geography />} />
