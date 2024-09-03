@@ -146,6 +146,7 @@ import clientRoutes from "./routes/clientRoutes.js";
 import managementRoutes from "./routes/managementRoutes.js";
 import salesRoutes from "./routes/salesRoutes.js";
 import airQualityRoutes from './routes/airQualityRoutes.js'; 
+import trafficRoutes from './routes/trafficRoutes.js';
  // Import air quality routes
 import weatherRoutes from './routes/weatherRoutes.js';
 import co2EmissionRoutes from './routes/co2EmissionRoutes.js';
@@ -172,6 +173,7 @@ app.use("/sales", salesRoutes);
 app.use('/api/airquality', airQualityRoutes);
 app.use('/api/weather', weatherRoutes);
 app.use('/api/co2emissions', co2EmissionRoutes);
+app.use('/api/traffic', trafficRoutes);
 
 // MONGOOSE SETUP
 const PORT = process.env.PORT || 9000;

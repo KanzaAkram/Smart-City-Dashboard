@@ -23,7 +23,9 @@ import Monthly from "./scenes/Monthly";
 import Breakdown from "./scenes/Breakdown";
 import Admin from "./scenes/Admin";
 import Performance from "./scenes/Performance";
-import Weather from "./scenes/Weather"
+import Weather from "./scenes/Weather";
+import CO2Emission from "./scenes/CO2Emission";
+import TrafficFlowMap from "./scenes/TrafficFlowMap"; // Import TrafficFlowMap component
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -36,7 +38,8 @@ const router = createBrowserRouter(
       <Route path="/transactions" element={<Transactions />} />
       <Route path="/geography" element={<Geography />} />
       <Route path="/overview" element={<Overview />} />
-      <Route path="/c02emission" element={<C02Emission />} />
+      <Route path="/co2emissions" element={<CO2Emission />} />
+      <Route path="/trafficflow" element={<TrafficFlowMap />} /> {/* Added route */}
 
       <Route path="/daily" element={<Daily />} />
       <Route path="/monthly" element={<Monthly />} />
