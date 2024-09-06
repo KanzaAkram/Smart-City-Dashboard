@@ -26,6 +26,9 @@ import Performance from "./scenes/Performance";
 import Weather from "./scenes/Weather";
 import CO2Emission from "./scenes/CO2Emission";
 import TrafficFlowMap from "./scenes/TrafficFlowMap"; // Import TrafficFlowMap component
+import WaterUsage from "./scenes/WaterUsage";
+import EnergyConsumption from "./scenes/EnergyConsumption";
+import ParkingAvailability from "./scenes/ParkingAvailability"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -40,12 +43,17 @@ const router = createBrowserRouter(
       <Route path="/overview" element={<Overview />} />
       <Route path="/co2emissions" element={<CO2Emission />} />
       <Route path="/trafficflow" element={<TrafficFlowMap />} /> {/* Added route */}
-
+      <Route path="/waterusage" element={<WaterUsage />} />
       <Route path="/daily" element={<Daily />} />
       <Route path="/monthly" element={<Monthly />} />
       <Route path="/breakdown" element={<Breakdown />} />
       <Route path="/admin" element={<Admin />} />
       <Route path="/performance" element={<Performance />} />
+      <Route path="/energy-consumption" element={<EnergyConsumption />} />
+      <Route path="/parkingavailability" element={<ParkingAvailability />} />
+
+
+
     </Route>
   )
 );

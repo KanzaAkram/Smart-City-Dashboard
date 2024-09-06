@@ -85,17 +85,12 @@ const navItems = [
   {
     text: "Energy Consumption",
     icon: <OfflineBoltOutlined />,
-    path: "energyconsumption",
+    path: "energy-consumption",
   },
   {
     text: "Water Usage",
     icon: <WaterDropOutlined />,
     path: "waterusage",
-  },
-  {
-    text: "Waste Management",
-    icon: <DeleteOutlined />,
-    path: "wastemanagement",
   },
 ];
 
