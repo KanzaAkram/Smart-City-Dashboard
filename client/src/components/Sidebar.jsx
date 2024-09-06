@@ -68,11 +68,11 @@ const navItems = [
     icon: <TrafficOutlined />,
     path: "trafficflow",
   },
-  {
-    text: "Public Transport",
-    icon: <CommuteOutlined />,
-    path: "publictransport",
-  },
+  // {
+  //   text: "Public Transport",
+  //   icon: <CommuteOutlined />,
+  //   path: "publictransport",
+  // },
   {
     text: "Parking Availability",
     icon: <LocalParkingOutlined />,
