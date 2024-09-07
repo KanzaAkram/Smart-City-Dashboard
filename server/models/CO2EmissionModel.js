@@ -1,12 +1,29 @@
-// src/models/CO2EmissionModel.js
-
 import mongoose from 'mongoose';
 
-const co2EmissionSchema = new mongoose.Schema({
-  type: { type: String, required: true },
-  estimateData: { type: Object, required: true },
-});
+const CO2EmissionSchema = new mongoose.Schema({
+  estimate_id: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  fuel_source_type: {
+    type: String,
+    required: true
+  },
+  fuel_source_unit: {
+    type: String,
+    required: true
+  },
+  fuel_source_value: {
+    type: Number,
+    required: true
+  },
+  carbon_mt: {
+    type: Number,
+    required: true
+  }
+}, { timestamps: true });
 
-const CO2Emission = mongoose.model('CO2Emission', co2EmissionSchema);
+export default mongoose.model('CO2Emission', CO2EmissionSchema);
 
-export default CO2Emission;
+

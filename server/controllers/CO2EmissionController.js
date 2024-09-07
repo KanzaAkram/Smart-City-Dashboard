@@ -1,108 +1,74 @@
-// // src/controllers/CO2EmissionController.js
-
-// import axios from 'axios';
-// import CO2Emission from '../models/CO2EmissionModel.js';
-
-// const API_KEY = 'vwk3LX5lASdQ2Nk29CM1Vw';
-// const BASE_URL = 'https://www.carboninterface.com/api/v1/estimates';
-
-// const createEstimate = async (req, res) => {
-//   const { type, ...params } = req.body;
-
-//   try {
-//     const response = await axios.post(BASE_URL, { type, ...params }, {
-//       headers: {
-//         'Authorization': `Bearer ${API_KEY}`,
-//         'Content-Type': 'application/json',
-//       },
-//     });
-
-//     const estimateData = response.data;
-//     await CO2Emission.create({ type, estimateData });
-    
-//     res.status(200).json(estimateData);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: 'An error occurred while creating the estimate.' });
-//   }
-// };
-
-// const getEstimate = async (req, res) => {
-//   const { id } = req.params;
-
-//   try {
-//     const response = await axios.get(`${BASE_URL}/${id}`, {
-//       headers: {
-//         'Authorization': `Bearer ${API_KEY}`,
-//       },
-//     });
-
-//     res.status(200).json(response.data);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: 'An error occurred while retrieving the estimate.' });
-//   }
-// };
-
-// export default {
-//   createEstimate,
-//   getEstimate,
-// };
-
-
-// src/controllers/CO2EmissionController.js
-
 import axios from 'axios';
-import CO2Emission from '../models/CO2EmissionModel.js'; // Ensure this model is correctly defined
+import CO2EmissionModel from '../models/CO2EmissionModel.js';
 
-const API_KEY = process.env.CARBON_INTERFACE_API_KEY; // Use environment variable for API key
-const BASE_URL = 'https://www.carboninterface.com/api/v1/estimates';
-
-const createEstimate = async (req, res) => {
-  const { type, ...params } = req.body;
+// Create a new CO2 emission estimate
+export const createCO2Estimate = async (req, res) => {
+  const { fuel_source_type, fuel_source_unit, fuel_source_value } = req.body;
 
   try {
-    const response = await axios.post(BASE_URL, { type, ...params }, {
+    const response = await axios.post('https://www.carboninterface.com/api/v1/estimates', 
+    {
+      type: 'fuel_combustion',
+      fuel_source_type: fuel_source_type,
+      fuel_source_unit: fuel_source_unit,
+      fuel_source_value: fuel_source_value
+    }, 
+    {
       headers: {
-        'Authorization': `Bearer ${API_KEY}`,
-        'Content-Type': 'application/json',
-      },
+        Authorization: `Bearer ${process.env.CARBON_INTERFACE_API_KEY}`,
+        'Content-Type': 'application/json'
+      }
     });
 
-    const estimateData = response.data;
+    const estimate = response.data;
 
-    // Adjust data structure according to your model
-    await CO2Emission.create({
-      type,
-      estimateData: estimateData.data, // Ensure this matches your model schema
+    // Save the estimate in the database (optional)
+    await CO2EmissionModel.create({
+      estimate_id: estimate.data.id,
+      fuel_source_type,
+      fuel_source_unit,
+      fuel_source_value,
+      carbon_mt: estimate.data.attributes.carbon_mt
     });
-    
-    res.status(200).json(estimateData);
+
+    res.status(201).json({
+      success: true,
+      data: estimate.data
+    });
   } catch (error) {
-    console.error('Error creating estimate:', error.response ? error.response.data : error.message);
-    res.status(error.response ? error.response.status : 500).json({ error: 'An error occurred while creating the estimate.' });
+    console.error('Error creating CO2 estimate:', error.response ? error.response.data : error.message);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to create CO2 estimate',
+    });
   }
 };
 
-const getEstimate = async (req, res) => {
-  const { id } = req.params;
+// Retrieve a specific CO2 estimate by ID
+export const getCO2EstimateById = async (req, res) => {
+  const estimateId = req.params.id;
 
   try {
-    const response = await axios.get(`${BASE_URL}/${id}`, {
+    const response = await axios.get(`https://www.carboninterface.com/api/v1/estimates/${estimateId}`, 
+    {
       headers: {
-        'Authorization': `Bearer ${API_KEY}`,
-      },
+        Authorization: `Bearer ${process.env.CARBON_INTERFACE_API_KEY}`,
+        'Content-Type': 'application/json'
+      }
     });
 
-    res.status(200).json(response.data);
-  } catch (error) {
-    console.error('Error retrieving estimate:', error.response ? error.response.data : error.message);
-    res.status(error.response ? error.response.status : 500).json({ error: 'An error occurred while retrieving the estimate.' });
-  }
-};
+    const estimate = response.data;
 
-export default {
-  createEstimate,
-  getEstimate,
+    res.status(200).json({
+      success: true,
+      data: estimate.data
+    });
+  } catch (error) {
+    console.error('Error fetching CO2 estimate:', error.response ? error.response.data : error.message);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to fetch CO2 estimate',
+    });
+  }
 };
 
