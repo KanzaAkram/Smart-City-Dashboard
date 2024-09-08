@@ -12,10 +12,6 @@ This comprehensive smart city dashboard project is built using the MERN (MongoDB
 4. [Technologies Used](#technologies-used)
 5. [Packages Used](#packages-used)
 6. [Installation](#installation)
-7. [Folder Structure](#folder-structure)
-8. [Running the Application](#running-the-application)
-9. [Author](#author)
-10. [Documentation](#documentation)
 
 ## Demo
 
