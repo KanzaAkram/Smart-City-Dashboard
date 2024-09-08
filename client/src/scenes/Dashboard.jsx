@@ -103,14 +103,14 @@ function Dashboard() {
           </Typography>
           <ResponsiveContainer width="100%" height={200}>
             <PieChart>
-              <Pie data={Object.keys(data.co2Emissions).map(key => ({ name: key, value: data.co2Emissions[key] }))} dataKey="value" outerRadius={80} label>
+              <Pie data={Object.keys(data.co2Emissions).map(key => ({ name: key, value: data.co2Emissions[key] }))} dataKey="value" outerRadius={60} label>
                 <Cell fill="#8884d8" />
                 <Cell fill="#82ca9d" />
                 <Cell fill="#ffc658" />
                 <Cell fill="#ff6f61" />
               </Pie>
-              <Tooltip contentStyle={{ fontSize: '14px', backgroundColor: '#fff', borderColor: '#ddd' }} />
-              <Legend layout="vertical" verticalAlign="middle" align="right" wrapperStyle={{ fontSize: '14px' }} />
+              <Tooltip contentStyle={{ fontSize: '12px', backgroundColor: '#fff', borderColor: '#ddd' }} />
+              <Legend layout="vertical" verticalAlign="middle" align="right" wrapperStyle={{ fontSize: '13px', paddingTop: '200px' }} />
             </PieChart>
           </ResponsiveContainer>
         </Box>
@@ -136,7 +136,12 @@ function Dashboard() {
               <Line type="monotone" dataKey="incidents" stroke="#82ca9d" />
             </LineChart>
           </ResponsiveContainer>
-          <Typography variant="body2" sx={{ marginTop: "1rem" }}>
+          <Typography variant="body2" sx={{
+            marginTop: "5rem",
+            fontWeight: "bold",
+            fontSize: "1rem",  // Adjust size as needed
+            textAlign: "center"
+          }}>
             Average Speed: {data.traffic.averageSpeed} km/h | Incidents: {data.traffic.incidents}
           </Typography>
         </Box>
@@ -149,7 +154,7 @@ function Dashboard() {
           p="1.5rem"
           borderRadius="0.55rem"
         >
-          <Typography variant="h6" sx={{ color: theme.palette.secondary[100] }}>
+          <Typography variant="h6" sx={{ color: theme.palette.secondary[100] ,marginBottom:"70px"}}>
             Parking Availability
           </Typography>
           <ResponsiveContainer width="100%" height={300}>
@@ -168,15 +173,15 @@ function Dashboard() {
           gridColumn="span 4"
           gridRow="span 2"
           backgroundColor={theme.palette.background.alt}
-          p="1.5rem"
+          p="0.1rem"
           borderRadius="0.55rem"
         >
-          <Typography variant="h6" sx={{ color: theme.palette.secondary[100] }}>
+          <Typography variant="h6" sx={{ color: theme.palette.secondary[100], paddingTop:"10px", paddingLeft:"80px" }}>
             Energy Consumption
           </Typography>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
-              <Pie data={Object.keys(data.energy.consumption).map(key => ({ name: key, value: data.energy.consumption[key] }))} dataKey="value" outerRadius={80} label>
+              <Pie data={Object.keys(data.energy.consumption).map(key => ({ name: key, value: data.energy.consumption[key] }))} dataKey="value" outerRadius={60} label>
                 <Cell fill="#8884d8" />
                 <Cell fill="#82ca9d" />
                 <Cell fill="#ffc658" />
@@ -195,12 +200,12 @@ function Dashboard() {
           p="1.5rem"
           borderRadius="0.55rem"
         >
-          <Typography variant="h6" sx={{ color: theme.palette.secondary[100] }}>
+          <Typography variant="h6" sx={{ color: theme.palette.secondary[100], marginLeft:"90px" }}>
             Water Usage
           </Typography>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
-              <Pie data={Object.keys(data.water.usage).map(key => ({ name: key, value: data.water.usage[key] }))} dataKey="value" outerRadius={80} label>
+              <Pie data={Object.keys(data.water.usage).map(key => ({ name: key, value: data.water.usage[key] }))} dataKey="value" outerRadius={60} label>
                 <Cell fill="#8884d8" />
                 <Cell fill="#82ca9d" />
                 <Cell fill="#ffc658" />

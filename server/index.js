@@ -6,13 +6,7 @@ import morgan from "morgan";
 import cors from "cors";
 import mongoose from "mongoose";
 
-import generalRoutes from "./routes/generalRoutes.js";
-import clientRoutes from "./routes/clientRoutes.js";
-import managementRoutes from "./routes/managementRoutes.js";
-import salesRoutes from "./routes/salesRoutes.js";
-// import airQualityRoutes from './routes/airQualityRoutes.js';
 import trafficRoutes from './routes/trafficRoutes.js';
-// import weatherRoutes from './routes/weatherRoutes.js';
 import co2EmissionRoutes from './routes/co2EmissionRoutes.js';
 
 
@@ -30,12 +24,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 // Routes
-app.use("/general", generalRoutes);
-app.use("/client", clientRoutes);
-app.use("/management", managementRoutes);
-app.use("/sales", salesRoutes);
-// app.use('/api/airquality', airQualityRoutes);
-// app.use('/api/weather', weatherRoutes);
 app.use('/api/co2emissions', co2EmissionRoutes);
 app.use('/api/traffic', trafficRoutes);
 

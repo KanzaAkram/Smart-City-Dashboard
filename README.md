@@ -1,6 +1,6 @@
 # Smart City Dashboard Project
 
-![Dashboard Screenshot](client/public/readme_assets/screenshot.png)
+![Dashboard Screenshot](client/public/readme_assets/dashboard.png)
 
 This comprehensive smart city dashboard project is built using the MERN (MongoDB, Express.js, React, Node.js) stack. It provides a versatile interface for managing and visualizing various aspects of a smart city, including air quality, weather, CO2 emissions, traffic flow, energy consumption, water usage, and parking availability. The dashboard supports light and dark mode themes and is designed to be responsive across different devices.
 
@@ -29,7 +29,7 @@ This project aims to offer a comprehensive dashboard solution for smart city man
 
 ### Air Quality
 - **Description**: Displays the current Air Quality Index (AQI) along with a status description based on the AQI value.
-- ![Air Quality](client/public/readme_assets/air_quality.png)
+- ![Air Quality](client/public/readme_assets/airquality.png)
 
 ### Weather
 - **Description**: Shows the current weather conditions including temperature, description, humidity, and wind speed.
@@ -37,23 +37,23 @@ This project aims to offer a comprehensive dashboard solution for smart city man
 
 ### CO2 Emissions
 - **Description**: Provides a breakdown of CO2 emissions from different sources such as electricity, flights, shipping, and vehicles.
-- ![CO2 Emissions](client/public/readme_assets/co2_emissions.png)
+- ![CO2 Emissions](client/public/readme_assets/co2.png)
 
 ### Traffic Flow
 - **Description**: Displays traffic congestion levels, average speed, and incidents on the map.
-- ![Traffic Flow](client/public/readme_assets/traffic_flow.png)
+- ![Traffic Flow](client/public/readme_assets/traffic.png)
 
 ### Energy Consumption
 - **Description**: Breaks down energy consumption by sector and generation type.
-- ![Energy Consumption](client/public/readme_assets/energy_consumption.png)
+- ![Energy Consumption](client/public/readme_assets/energy.png)
 
 ### Water Usage
 - **Description**: Displays water usage by sector and the availability status.
-- ![Water Usage](client/public/readme_assets/water_usage.png)
+- ![Water Usage](client/public/readme_assets/water.png)
 
 ### Parking Availability
 - **Description**: Shows the number of available parking spaces, total spaces, and occupancy rate.
-- ![Parking Availability](client/public/readme_assets/parking_availability.png)
+- ![Parking Availability](client/public/readme_assets/parking.png)
 
 ## Technologies Used
 

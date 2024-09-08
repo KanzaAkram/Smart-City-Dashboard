@@ -38,6 +38,7 @@ const EnergyConsumption = () => {
 
   const barOptions = {
     responsive: true,
+    maintainAspectRatio: false,  // Allow the chart to occupy the entire card
     plugins: {
       legend: {
         position: 'top',
@@ -67,6 +68,7 @@ const EnergyConsumption = () => {
 
   const pieOptions = {
     responsive: true,
+    maintainAspectRatio: false,  // Allow the chart to occupy the entire card
     plugins: {
       legend: {
         position: 'top',
@@ -82,24 +84,28 @@ const EnergyConsumption = () => {
   return (
     <Grid container spacing={3} style={{ padding: '20px' }}>
       <Grid item xs={12} md={6}>
-        <Card>
-          <CardContent>
+        <Card style={{ height: '100%' }}>  {/* Ensure the card takes full height */}
+          <CardContent style={{ height: '100%' }}>  {/* Ensure the content fills the card */}
             <Typography variant="h5" component="div">
               Energy Consumption Overview
             </Typography>
             <Divider style={{ margin: '10px 0' }} />
-            <Bar data={barData} options={barOptions} />
+            <div style={{ height: '300px' }}>  {/* Set fixed height for chart */}
+              <Bar data={barData} options={barOptions} height={null} /> {/* height={null} to allow scaling */}
+            </div>
           </CardContent>
         </Card>
       </Grid>
       <Grid item xs={12} md={6}>
-        <Card>
-          <CardContent>
+        <Card style={{ height: '100%' }}>
+          <CardContent style={{ height: '100%' }}>
             <Typography variant="h5" component="div">
               Energy Distribution
             </Typography>
             <Divider style={{ margin: '10px 0' }} />
-            <Pie data={pieData} options={pieOptions} />
+            <div style={{ height: '300px' }}>
+              <Pie data={pieData} options={pieOptions} height={null} />
+            </div>
           </CardContent>
         </Card>
       </Grid>
@@ -110,10 +116,10 @@ const EnergyConsumption = () => {
               variant="h5" 
               component="div"
               sx={{
-                backgroundColor: '#f5f5f5', // Light gray background
+                backgroundColor: '#e56732',
                 padding: '10px',
                 borderRadius: '4px',
-                color: '#333' // Dark text color for contrast
+                color: '#333'
               }}
             >
               Summary
@@ -141,6 +147,3 @@ const EnergyConsumption = () => {
 };
 
 export default EnergyConsumption;
-
-
-
