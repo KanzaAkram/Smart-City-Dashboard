@@ -12,21 +12,22 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
+
 import {
   SettingsOutlined,
   ChevronLeft,
   ChevronRightOutlined,
   HomeOutlined,
-  LocalParkingOutlinedIcon,
-  CommuteOutlinedIcon,
-  DeleteOutlineOutlinedIcon,
-  AirOutlinedIcon,
-  OfflineBoltOutlinedIcon,
-  CloudOutlinedIcon,
-  WaterDropOutlinedIcon,
+  DeleteOutlined,
+  WaterDropOutlined,
+  OfflineBoltOutlined,
+  AirOutlined,
+  LocalParkingOutlined,
+  CloudOutlined,
+  CommuteOutlined,
   AdminPanelSettingsOutlined,
-  Co2OutlinedIcon,
-  TrafficOutlinedIcon,
+  Co2Outlined,
+  TrafficOutlined,
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -37,6 +38,7 @@ const navItems = [
   {
     text: "Dashboard",
     icon: <HomeOutlined />,
+    path: "dashboard",
   },
   {
     text: "Environment Monitoring",
@@ -44,15 +46,18 @@ const navItems = [
   },
   {
     text: "Air Quality",
-    icon: <AirOutlinedIcon />,
+    icon: <AirOutlined />,
+    path: "airquality",
   },
   {
     text: "Weather",
-    icon: <CloudOutlinedIcon />,
+    icon: <CloudOutlined />,
+    path: "weather",
   },
   {
     text: "CO2 Emissions",
-    icon: <Co2OutlinedIcon />,
+    icon: <Co2Outlined />,
+    path: "co2emissions",
   },
   {
     text: "Traffic and Transportation",
@@ -60,15 +65,18 @@ const navItems = [
   },
   {
     text: "Traffic Flow",
-    icon: <TrafficOutlinedIcon />,
+    icon: <TrafficOutlined />,
+    path: "trafficflow",
   },
-  {
-    text: "Public Transport",
-    icon: <CommuteOutlinedIcon />,
-  },
+  // {
+  //   text: "Public Transport",
+  //   icon: <CommuteOutlined />,
+  //   path: "publictransport",
+  // },
   {
     text: "Parking Availability",
-    icon: <LocalParkingOutlinedIcon />,
+    icon: <LocalParkingOutlined />,
+    path: "parkingavailability",
   },
   {
     text: "Utilities and Energy",
@@ -76,15 +84,13 @@ const navItems = [
   },
   {
     text: "Energy Consumption",
-    icon: <OfflineBoltOutlinedIcon />,
+    icon: <OfflineBoltOutlined />,
+    path: "energy-consumption",
   },
   {
     text: "Water Usage",
-    icon: <WaterDropOutlinedIcon />,
-  },
-  {
-    text: "Waste Management",
-    icon: <DeleteOutlineOutlinedIcon />,
+    icon: <WaterDropOutlined />,
+    path: "waterusage",
   },
 ];
 
@@ -117,7 +123,7 @@ function Sidebar({
             "& .MuiDrawer-paper": {
               color: theme.palette.secondary[200],
               backgroundColor: theme.palette.background.alt,
-              boxSixing: "border-box",
+              boxSizing: "border-box",
               borderWidth: isNonMobile ? 0 : "2px",
               width: drawerWidth,
             },
@@ -146,7 +152,7 @@ function Sidebar({
               </FlexBetween>
             </Box>
             <List>
-              {navItems.map(({ text, icon }) => {
+              {navItems.map(({ text, icon, path }) => {
                 if (!icon) {
                   return (
                     <Typography
@@ -158,14 +164,16 @@ function Sidebar({
                     </Typography>
                   );
                 }
-                const lcText = text.toLowerCase();
+                const lcText = path ? path.toLowerCase() : text.toLowerCase();
 
                 return (
                   <ListItem key={text} disablePadding>
                     <ListItemButton
                       onClick={() => {
-                        navigate(`/${lcText}`);
-                        setActive(lcText);
+                        if (path) {
+                          navigate(`/${lcText}`);
+                          setActive(lcText);
+                        }
                       }}
                       sx={{
                         backgroundColor:
@@ -252,3 +260,4 @@ function Sidebar({
 }
 
 export default Sidebar;
+
