@@ -1,0 +1,97 @@
+/* Container for the whole air quality section */
+.airQualityContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  margin-top: 100px;
+  background-color: #416b9c;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(151, 65, 65, 0.1);
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input group to align inputs and button */
+.inputGroup {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Input fields for city, state, and country */
+.inputGroup input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 150px;
+}
+
+/* Styling the button */
+.inputGroup button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.inputGroup button:hover {
+  background-color: #2980b9;
+}
+
+/* Loading gif for when data is being fetched */
+.loadingGif {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Displaying air quality data */
+.airQualityData {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.temp {
+  font-size: 36px;
+  color: #e74c3c;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.degrees {
+  font-size: 20px;
+  color: #555;
+}
+
+/* Styling for air quality status message */
+.airQualityData p {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Adding responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .inputGroup {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .inputGroup input, 
+  .inputGroup button {
+    width: 100%;
+  }
+}
