@@ -28,6 +28,9 @@ import {
   AdminPanelSettingsOutlined,
   Co2Outlined,
   TrafficOutlined,
+  AccountCircle,
+  Book,
+  AutoGraph
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -40,58 +43,23 @@ const navItems = [
     icon: <HomeOutlined />,
     path: "dashboard",
   },
+  
   {
-    text: "Environment Monitoring",
-    icon: null,
-  },
-  {
-    text: "Air Quality",
-    icon: <AirOutlined />,
+    text: "Students Page",
+    icon: <AccountCircle />,
     path: "airquality",
   },
   {
-    text: "Weather",
-    icon: <CloudOutlined />,
+    text: "Tracker Page",
+    icon: <AutoGraph />,
     path: "weather",
   },
   {
-    text: "CO2 Emissions",
-    icon: <Co2Outlined />,
+    text: "Assignments Page",
+    icon: <Book />,
     path: "co2emissions",
   },
-  {
-    text: "Traffic and Transportation",
-    icon: null,
-  },
-  {
-    text: "Traffic Flow",
-    icon: <TrafficOutlined />,
-    path: "trafficflow",
-  },
-  // {
-  //   text: "Public Transport",
-  //   icon: <CommuteOutlined />,
-  //   path: "publictransport",
-  // },
-  {
-    text: "Parking Availability",
-    icon: <LocalParkingOutlined />,
-    path: "parkingavailability",
-  },
-  {
-    text: "Utilities and Energy",
-    icon: null,
-  },
-  {
-    text: "Energy Consumption",
-    icon: <OfflineBoltOutlined />,
-    path: "energy-consumption",
-  },
-  {
-    text: "Water Usage",
-    icon: <WaterDropOutlined />,
-    path: "waterusage",
-  },
+  
 ];
 
 function Sidebar({
@@ -139,7 +107,7 @@ function Sidebar({
                   width="fit-content"
                 >
                   <Typography variant="h4" fontWeight="bold">
-                    Smart City Dashboard
+                    Student Assignment Dashboard
                   </Typography>
                   {!isNonMobile && (
                     <IconButton
