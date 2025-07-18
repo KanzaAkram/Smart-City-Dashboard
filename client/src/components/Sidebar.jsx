@@ -54,11 +54,11 @@ const navItems = [
     icon: <AutoGraph />,
     path: "weather",
   },
-  {
-    text: "Assignments Page",
-    icon: <Book />,
-    path: "co2emissions",
-  },
+  // {
+  //   text: "Assignments Page",
+  //   icon: <Book />,
+  //   path: "co2emissions",
+  // },
   
 ];
 
